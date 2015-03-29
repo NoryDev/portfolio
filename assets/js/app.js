@@ -296,9 +296,9 @@ $(function () {
 						message: 'Name cannot be empty'
 					},
 					stringLength: {
-						min: 6,
+						min: 1,
 						max: 30,
-						message: 'Name must be more than 6 and less than 30 characters long'
+						message: 'Name must be more than 0 and less than 30 characters long'
 					},
 					regexp: {
 						regexp: /^[a-zA-Z\s]+$/,
@@ -337,12 +337,12 @@ $(function () {
 			btnText.html("Sending...");
 
 			$.post(form.attr('action'), form.serialize(), function(result) {
-				if(result.sent){
+				// if(result.sent){
 					btnText.html("Sent!");
-				}
-				else{
-					btnText.html("Error!");
-				}
+				// }
+				// else{
+				// 	btnText.html("Error!");
+				// }
 
 				// Reset form after 5s
 				setTimeout(function() {
@@ -352,6 +352,9 @@ $(function () {
 				}, 5000);
 
 			}, 'json')
+      .fail(function() {
+        btnText.html("Error!");
+      })
 			.always(function() {
 				l.stop();
 				validator.disableSubmitButtons(true);

@@ -991,9 +991,10 @@ form.signup button.btn {
 .pace .pace-activity:before {
   content: '';
   background-color: #202020;
-  background-image: url('../img/logo/logo.png');
+  background-image: url('../img/logo/logo@2x.png');
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: 140px 25px;
   display: block;
   z-index: 4000;
   position: fixed;

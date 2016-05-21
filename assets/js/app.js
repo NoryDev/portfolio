@@ -338,11 +338,18 @@ $(function () {
 
 			$.post(form.attr('action'), form.serialize(), function(result) {
 				// if(result.sent){
-					btnText.html("Sent!");
+					// btnText.html("Sent!");
 				// }
 				// else{
 				// 	btnText.html("Error!");
 				// }
+				console.log(result);
+				if(result.success){
+					btnText.html("Sent!");
+				}
+				else{
+					btnText.html("Error!");
+				}
 
 				// Reset form after 5s
 				setTimeout(function() {

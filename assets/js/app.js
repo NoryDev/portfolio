@@ -337,13 +337,6 @@ $(function () {
 			btnText.html("Sending...");
 
 			$.post(form.attr('action'), form.serialize(), function(result) {
-				// if(result.sent){
-					// btnText.html("Sent!");
-				// }
-				// else{
-				// 	btnText.html("Error!");
-				// }
-				console.log(result);
 				if(result.success){
 					btnText.html("Sent!");
 				}
